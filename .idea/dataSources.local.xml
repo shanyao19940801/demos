@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Oracle - @localhost" uuid="382373de-6cb1-4a36-84be-c56edc304e4d">
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>shanyao</user-name>
+    </data-source>
+    <data-source name="Oracle - day001@localhost" uuid="30073389-28c2-4e3c-a7a4-dcc04799dbe2">
+      <secret-storage>master_key</secret-storage>
+      <user-name>shanyao</user-name>
+      <schema-pattern>*.SHANYAO *.SYS *.SYSTEM</schema-pattern>
+      <default-schemas>*.SHANYAO *.SYS *.SYSTEM</default-schemas>
+    </data-source>
+  </component>
+</project>

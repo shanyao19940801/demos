@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.hibernate.entity.ManEntity" table="MAN" schema="SHANYAO">
+        <id name="id">
+            <column name="ID" sql-type="varchar2" length="4" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="NAME" sql-type="varchar2" length="10"/>
+        </property>
+        <property name="sex">
+            <column name="SEX" sql-type="char" length="2"/>
+        </property>
+        <property name="picture">
+            <column name="PICTURE" sql-type="blob"/>
+        </property>
+        <property name="address">
+            <column name="ADDRESS" sql-type="varchar2" length="30"/>
+        </property>
+        <property name="age">
+            <column name="AGE" sql-type="number" precision="38"/>
+        </property>
+        <property name="birthday">
+            <column name="BIRTHDAY" sql-type="date"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,5 @@
+介绍一下在Eclipse中配置实用JUnit4的方法（MyEclipse同理）。
+1、在你的项目上右击选择最下方的Properties，在弹出窗口左侧的导航栏里选择Java Build Path，上方标签页选择Libraries；
+2、之后点击右侧的Add Library...，在弹出的窗口中选择JUnit并点击Next>；
+3、默认选择JUnit 4，之后Finish；
+4、这样，JUnit 4的测试工具包就添加进来了。
