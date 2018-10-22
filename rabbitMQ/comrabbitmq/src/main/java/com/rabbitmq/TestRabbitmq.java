@@ -9,6 +9,10 @@ public class TestRabbitmq {
             Thread consumerThread = new Thread(consumer);
             consumerThread.start();
 
+            Consumer_1 consumer_1 = new Consumer_1("queue");
+            Thread thread1 = new Thread(consumer_1);
+            thread1.start();
+
             Producer_Remote producer = new Producer_Remote("queue");
 
             for (int i = 0; i < 10; i++){
