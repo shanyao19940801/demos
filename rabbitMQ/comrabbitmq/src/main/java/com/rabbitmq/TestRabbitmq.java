@@ -21,7 +21,7 @@ public class TestRabbitmq {
             Producer_02 producer_02 = new Producer_02("queue");
 
 
-            for (int i = 0; i < 10; i++){
+            for (int i = 0; i < 10000; i++){
                 HashMap message = new HashMap();
                 message.put("message number", "producer_1:" + i);
                 producer.sendMessage(message);
