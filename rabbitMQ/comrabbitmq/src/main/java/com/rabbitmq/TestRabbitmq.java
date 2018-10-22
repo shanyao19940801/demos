@@ -2,6 +2,10 @@ package com.rabbitmq;
 
 import java.util.HashMap;
 
+/** 测试：
+ * 多个生产者往同一个队列中添加信息
+ * 多个消费者从同一个队列中获取消息
+ */
 public class TestRabbitmq {
     public static void main(String[] args){
         try{
@@ -13,13 +17,18 @@ public class TestRabbitmq {
             Thread thread1 = new Thread(consumer_1);
             thread1.start();
 
-            Producer_Remote producer = new Producer_Remote("queue");
+            Producer_01 producer = new Producer_01("queue");
+            Producer_02 producer_02 = new Producer_02("queue");
+
 
             for (int i = 0; i < 10; i++){
                 HashMap message = new HashMap();
-                message.put("message number", i);
+                message.put("message number", "producer_1:" + i);
                 producer.sendMessage(message);
-                System.out.println("Message Number "+ i +" sent.");
+                HashMap message2 = new HashMap();
+                message2.put("message number", "producer_2:" + i);
+                producer_02.sendMessage(message2);
+//                System.out.println("Message Number "+ i +" sent.");
             }
         }catch(Exception e){
             e.printStackTrace();

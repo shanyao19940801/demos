@@ -9,7 +9,7 @@ public class ProducerTest {
             Thread consumerThread = new Thread(consumer);
             consumerThread.start();*/
 
-            Producer_Remote producer_remote = new Producer_Remote("queue");
+            Producer_01 producer_remote = new Producer_01("queue");
 //            for (int i = 0; i < 10; i++) {
                 HashMap map = new HashMap();
                 map.put("1", "shanyao");

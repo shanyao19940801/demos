@@ -5,9 +5,9 @@ import org.springframework.amqp.utils.SerializationUtils;
 
 import java.io.Serializable;
 
-public class Producer_Remote extends EndPoint {
+public class Producer_01 extends EndPoint {
 
-    public Producer_Remote(String endpointName) throws Exception {
+    public Producer_01(String endpointName) throws Exception {
         super(endpointName);
     }
 
