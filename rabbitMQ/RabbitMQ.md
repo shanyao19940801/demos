@@ -20,3 +20,6 @@ RabbitMQ消息队列-通过fanout模式将消息推送到多个Queue中
 1. producer： 消息生产者，就是投递消息的程序。 
 1. consumer：消息消费者，就是接受消息的程序。 
 1. channel：消息通道，在客户端的每个连接里，可建立多个channel，每个channel代表一个会话任务。
+
+### 三种Exchange
+
