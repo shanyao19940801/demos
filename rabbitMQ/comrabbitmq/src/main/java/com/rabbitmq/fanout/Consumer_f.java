@@ -1,6 +1,5 @@
 package com.rabbitmq.fanout;
 
-import com.rabbitmq.EndPoint;
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Consumer;
 import com.rabbitmq.client.Envelope;

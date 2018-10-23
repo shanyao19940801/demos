@@ -1,4 +1,4 @@
-package com.rabbitmq;
+package com.rabbitmq.direct;
 
 import org.springframework.amqp.utils.SerializationUtils;
 

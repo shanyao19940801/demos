@@ -7,16 +7,16 @@ import com.rabbitmq.client.ShutdownSignalException;
 import org.springframework.amqp.utils.SerializationUtils;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
-public class TopicConsumer extends TopicEndPoint implements Runnable,Consumer{
-
-
-    public TopicConsumer(String endpointName, String exchangeName) throws Exception {
-        super(endpointName, exchangeName);
+public class ConsumerWithKey  extends TopicEndPoint implements Runnable,Consumer {
+    private String routingKey;
+    public ConsumerWithKey(String endpointName, String exchangeName) throws Exception {
+        this(endpointName, exchangeName, "");
     }
-
+    public ConsumerWithKey(String endpointName, String exchangeName, String key) throws Exception {
+        super(endpointName, exchangeName);
+        routingKey = key;
+    }
 
     public void handleConsumeOk(String s) {
 
@@ -52,8 +52,7 @@ public class TopicConsumer extends TopicEndPoint implements Runnable,Consumer{
             channel.queueDeclare(queueName, false, false, false, null);
             channel.basicConsume(queueName, true, this);
             //绑定queue的时候会制定一个routingKey,这个routingKey可以匹配任何routingKey以critical结尾的queue
-            channel.queueBind(queueName,exchangeName,"*.critical");
-            System.out.println("11111");
+            channel.queueBind(queueName, exchangeName, routingKey);
         } catch (IOException e) {
             e.printStackTrace();
         }

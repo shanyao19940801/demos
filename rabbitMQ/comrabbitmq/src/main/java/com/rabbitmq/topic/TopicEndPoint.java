@@ -4,16 +4,16 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
-public class EndPoint_t {
+public class TopicEndPoint {
     protected Channel channel;
     protected Connection connection;
-    protected String endPointName;
+    protected String queueName;
     protected String exchangeName;
 
-    public EndPoint_t(String endpointName, String exchangeName) throws Exception {
+    public TopicEndPoint(String endpointName, String exchangeName) throws Exception {
 
         this.exchangeName = exchangeName;
-        this.endPointName = endpointName;
+        this.queueName = endpointName;
 
         //创建一个连接工厂 connection factory
         ConnectionFactory factory = new ConnectionFactory();
@@ -31,7 +31,7 @@ public class EndPoint_t {
         //创建 channel实例
         channel = connection.createChannel();
 
-        channel.exchangeDeclare(exchangeName,"fanout");
+        channel.exchangeDeclare(exchangeName,"topic", false, true, null);
 
 
 //        channel.queueBind(endpointName,"exchangeName","routingKey");

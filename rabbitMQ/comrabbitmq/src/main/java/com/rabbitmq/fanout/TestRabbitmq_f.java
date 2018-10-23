@@ -1,16 +1,11 @@
 package com.rabbitmq.fanout;
 
-import com.rabbitmq.Consumer_1;
-import com.rabbitmq.Producer_01;
-import com.rabbitmq.Producer_02;
-import com.rabbitmq.QueueConsumer;
-
 import java.util.HashMap;
 
 /** 测试：exchange的fanout模式测试
 
  */
-public class TestRabbitmq_f {
+public class    TestRabbitmq_f {
     public static void main(String[] args){
         String exchangeName = "exchangeName";
         String queueName = "queue";
@@ -19,22 +14,22 @@ public class TestRabbitmq_f {
             //从下面两个消费者可以看出来，两个消费者可以从不同的queue中获取相同的信息
             //因为这两个queue都和exchange进行了绑定，而fanmout模式中生产者会将消息发送给exchange，而exchange
             //会将消息发送到所有与其绑定的queue中
-//            Consumer_f consumer = new Consumer_f("queue",exchangeName);
-//            Thread consumerThread = new Thread(consumer);
-//            consumerThread.start();
-//
-//            Consumer_f1 consumer_1 = new Consumer_f1("queue1", exchangeName);
-//            Thread thread1 = new Thread(consumer_1);
-//            thread1.start();
+            Consumer_f consumer = new Consumer_f("queu3",exchangeName);
+            Thread consumerThread = new Thread(consumer);
+            consumerThread.start();
+
+            Consumer_f1 consumer_1 = new Consumer_f1("queue2", exchangeName);
+            Thread thread1 = new Thread(consumer_1);
+            thread1.start();
             //===================================================================//
             //=====================消费者：一个queue绑定多个exchang========================//
-            Consumer_f consumer_2 = new Consumer_f("queue",exchangeName);
-            Thread consumerThread_2 = new Thread(consumer_2);
-            consumerThread_2.start();
-
-            Consumer_f1 consumer_3 = new Consumer_f1("queue", exchangeName + "_1");
-            Thread thread_3 = new Thread(consumer_3);
-            thread_3.start();
+//            Consumer_f consumer_2 = new Consumer_f("queue",exchangeName);
+//            Thread consumerThread_2 = new Thread(consumer_2);
+//            consumerThread_2.start();
+//
+//            Consumer_f1 consumer_3 = new Consumer_f1("queue", exchangeName + "_1");
+//            Thread thread_3 = new Thread(consumer_3);
+//            thread_3.start();
             //===================================================================//
             Producer_f producer = new Producer_f(exchangeName);
             Producer_f producer_1 = new Producer_f(exchangeName + "_1");

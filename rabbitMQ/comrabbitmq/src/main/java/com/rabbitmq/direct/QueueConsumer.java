@@ -1,4 +1,4 @@
-package com.rabbitmq;
+package com.rabbitmq.direct;
 
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Consumer;
