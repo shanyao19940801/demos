@@ -9,11 +9,14 @@ public class TestTopicRabbitmq {
     public static void main(String[] args){
         String exchangeName = "exchangeName_topic_1";
         String queueName = "queue_topic";
+        //这个是发送消息时，消息的关键字
         String[] routing_keys = new String[] { "kernal.info", "cron.warning",
                 "auth.info", "kernel.critical" , "shanyao.critical" };
         try{
 
             //==============================消费者通过不同的通配符与queue绑定==============================================//
+            //下面两个消费者是用不同的queue但是他们都受到消息，
+            //由此可见：生产者消息是发送给所有的queue的
             ConsumerWithKey consumer_1 = new ConsumerWithKey(queueName, exchangeName, "kernal.*");
             Thread thread_1 = new Thread(consumer_1);
             thread_1.start();
