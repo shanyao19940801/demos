@@ -1,6 +1,6 @@
 # RabbitMQ
-学习参考文档：
-https://blog.csdn.net/phker/article/details/71211895
+
+[学习参考文档](https://blog.csdn.net/phker/article/details/71211895)
 
 * 消费者down了，信息会丢失吗？
 
@@ -38,6 +38,15 @@ RabbitMQ消息队列-通过fanout模式将消息推送到多个Queue中
 
 4.如果接受到消息的Exchange没有与任何Queue绑定，则消息会被抛弃。
 
+* 应用场景
+
+	
+	第一：大型玩家在玩在线游戏的时候，可以用它来广播重大消息。这让我想到电影微微一笑很倾城中，有款游戏需要在世界上公布玩家重大消息，也许这个就是用的MQ实现的。这让我不禁佩服肖奈，人家在大学的时候就知道RabbitMQ的这种特性了。
+	
+	第二：体育新闻实时更新到手机客户端。
+	
+	第三：群聊功能，广播消息给当前群聊中的所有人。
+* 
 [Java代码demo](https://github.com/shanyao19940801/demos/tree/master/rabbitMQ/comrabbitmq/src/main/java/com/rabbitmq/fanout)
 
 #### 二.Direct Exchange
@@ -65,4 +74,14 @@ RabbitMQ消息队列-通过fanout模式将消息推送到多个Queue中
 4.“#”表示0个或若干个关键字，“*”表示一个关键字。如“log.*”能与“log.warn”匹配，无法与“log.warn.timeout”匹配；但是“log.#”能与上述两者匹配。
 
 5.同样，如果Exchange没有发现能够与RouteKey匹配的Queue，则会抛弃此消息。
+
+
+#### 一些注意点
+
+不要在业务程序中用代码定义创建 邮局 ExChange. 和邮箱Queue队列 这属于系统设计者要构架的事情. 要有专门独立的程序和规则去创建. 这样可以统一管理事件类型.避免过多的乱七八糟的RoutingKey混乱.
+
+#### 小结
+
+1. 消息系统的分布式可扩展的实现在于消息广播, 集群性的实现在于邮箱队列. 
+1. RabbitMQ是先广播后队列的.
 
