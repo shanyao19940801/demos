@@ -38,6 +38,8 @@ RabbitMQ消息队列-通过fanout模式将消息推送到多个Queue中
 
 4.如果接受到消息的Exchange没有与任何Queue绑定，则消息会被抛弃。
 
+[Java代码demo](https://github.com/shanyao19940801/demos/tree/master/rabbitMQ/comrabbitmq/src/main/java/com/rabbitmq/fanout)
+
 #### 二.Direct Exchange
 
 **任何发送到Direct Exchange的消息都会被转发到RouteKey中指定的Queue。**
@@ -49,7 +51,6 @@ RabbitMQ消息队列-通过fanout模式将消息推送到多个Queue中
 3.消息传递时需要一个“RouteKey”，可以简单的理解为要发送到的队列名字。
 
 4.如果vhost中不存在RouteKey中指定的队列名，则该消息会被抛弃。
-
 
 #### 三.Topic Exchange
 
