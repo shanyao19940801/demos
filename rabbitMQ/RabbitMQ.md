@@ -65,3 +65,4 @@ RabbitMQ消息队列-通过fanout模式将消息推送到多个Queue中
 4.“#”表示0个或若干个关键字，“*”表示一个关键字。如“log.*”能与“log.warn”匹配，无法与“log.warn.timeout”匹配；但是“log.#”能与上述两者匹配。
 
 5.同样，如果Exchange没有发现能够与RouteKey匹配的Queue，则会抛弃此消息。
+
