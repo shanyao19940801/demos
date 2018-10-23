@@ -1,16 +1,18 @@
-package com.rabbitmq;
+package com.rabbitmq.fanout;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
-public class EndPoint {
+public class EndPoint_f {
     protected Channel channel;
     protected Connection connection;
     protected String endPointName;
+    protected String exchangeName;
 
-    public EndPoint(String endpointName) throws Exception {
+    public EndPoint_f(String endpointName, String exchangeName) throws Exception {
 
+        this.exchangeName = exchangeName;
         this.endPointName = endpointName;
 
         //创建一个连接工厂 connection factory
@@ -29,8 +31,10 @@ public class EndPoint {
         //创建 channel实例
         channel = connection.createChannel();
 
-        //direct模式的exchange
-        channel.queueDeclare(endpointName, false, false, false, null);
+        channel.exchangeDeclare(exchangeName,"fanout");
+
+
+//        channel.queueBind(endpointName,"exchangeName","routingKey");
     }
 
     /**
