@@ -39,8 +39,6 @@ public class TestRabbitmq_f {
             Producer_f producer = new Producer_f(exchangeName);
             Producer_f producer_1 = new Producer_f(exchangeName + "_1");
 //            Producer_02 producer_02 = new Producer_02("queue");
-
-
             for (int i = 0; i < 100; i++){
                 HashMap message = new HashMap();
                 message.put("message number", "producer_f:" + i);
