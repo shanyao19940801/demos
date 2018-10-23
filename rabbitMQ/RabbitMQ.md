@@ -75,6 +75,7 @@ RabbitMQ消息队列-通过fanout模式将消息推送到多个Queue中
 
 5.同样，如果Exchange没有发现能够与RouteKey匹配的Queue，则会抛弃此消息。
 
+[Java代码demo](https://github.com/shanyao19940801/demos/tree/master/rabbitMQ/comrabbitmq/src/main/java/com/rabbitmq/topic)
 
 #### 一些注意点
 
