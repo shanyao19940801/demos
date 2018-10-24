@@ -1,0 +1,32 @@
+package com.test;
+message SearchRequest {
+    optional string query = 1;
+    optional int32 page_number = 2;
+    optional int32 result_per_page = 3;
+    enum Corpus {
+        UNIVERSAL = 0;
+        WEB = 1;
+        IMAGES = 2;
+        LOCAL = 3;
+        NEWS = 4;
+        PRODUCTS = 5;
+        VIDEO = 6;
+    }
+    optional Corpus corpus = 4;
+}
+
+message SearchResponse {
+    message Result {
+        optional string url = 1;
+        optional string title = 2;
+        repeated string snippets = 3;
+    }
+    repeated Result results = 1;
+}
+
+message SomeOtherMessage {
+    optional SearchResponse.Result result = 1;
+}
+
+
+

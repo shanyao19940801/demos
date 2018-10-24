@@ -1,0 +1,7 @@
+package com.test;
+
+message Open {
+    optional string qingqing_test = 1;
+    optional int32 page_number = 2;
+
+}

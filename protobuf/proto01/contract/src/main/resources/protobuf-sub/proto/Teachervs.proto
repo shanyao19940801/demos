@@ -1,0 +1,15 @@
+//5.7.1 教师邀请学生注册请求
+
+message TeacherInviteStudentRegisterRequest{
+        optional string phone_number = 1;
+        optional string captcha_code = 2; // 验证码
+        optional string channel_no = 3;
+        optional string spread_source = 4; //传播来源
+        optional string activity_no = 5; //活动编号
+        optional string inviter_qingqing_teacher_id = 6; //邀请教师 qingqing_user_id
+        optional int32 course_id = 7; // 课程Id
+        optional int32 grade_id = 8; // 年级Id
+        optional string register_source = 9; // 注册来源
+        optional string qingqing_assistant_id = 10;//5.9.7 指定推荐助教
+        optional string promotioner_qingqing_id = 11; // 6.1.0
+}

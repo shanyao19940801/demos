@@ -1,0 +1,3 @@
+message Foo {
+//    required src.proto.Open open = 1;
+}

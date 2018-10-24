@@ -6,7 +6,11 @@
 
     <groupId>proto01</groupId>
     <artifactId>proto01</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>contract</module>
+    </modules>
     <properties>
         <protobuf.input.directory>${project.basedir}/src/main/proto</protobuf.input.directory>
         <protobuf.output.directory>src/main/gen-java</protobuf.output.directory>
