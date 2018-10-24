@@ -1,0 +1,16 @@
+syntax = "proto";
+
+option java_package = "com.qingqing.proto.find";
+option java_outer_classname = "TaapiFindTeacherForTAProto";
+option objc_class_prefix = "TaapiGPB";
+
+//4.7.0 新增 找老师请求信息
+message TaapiFindTeacherDemandForTARequest {
+    optional int64 demand_id = 1;//找老师请求ID
+    optional int32 grade_id = 2;
+    optional int32 course_id = 3;
+    optional string address = 4;
+//    optional FindTeacherRequestTyoe request_type = 5;
+    optional int64 create_time = 6;
+    optional string info = 9;
+}
