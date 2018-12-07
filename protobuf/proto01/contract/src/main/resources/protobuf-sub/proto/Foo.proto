@@ -1,3 +1,4 @@
+option java_package = "com.qingqing.proto.v1";
 message Foo {
 //    required src.proto.Open open = 1;
 }

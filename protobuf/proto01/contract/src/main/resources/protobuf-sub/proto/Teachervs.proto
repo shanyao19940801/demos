@@ -1,5 +1,8 @@
-//5.7.1 教师邀请学生注册请求
+syntax = "proto2";
+option java_package = "com.qingqing.proto.find";
+option java_outer_classname = "Teacher";
 
+//5.7.1 教师邀请学生注册请求
 message TeacherInviteStudentRegisterRequest{
         optional string phone_number = 1;
         optional string captcha_code = 2; // 验证码
@@ -12,4 +15,8 @@ message TeacherInviteStudentRegisterRequest{
         optional string register_source = 9; // 注册来源
         optional string qingqing_assistant_id = 10;//5.9.7 指定推荐助教
         optional string promotioner_qingqing_id = 11; // 6.1.0
+}
+
+message TeacherIm {
+        optional int32 type = 1;
 }

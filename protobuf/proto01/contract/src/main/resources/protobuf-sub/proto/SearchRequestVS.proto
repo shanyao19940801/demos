@@ -1,4 +1,4 @@
-package com.test;
+option java_package = "com.qingqing.proto.v1";
 message SearchRequest {
     optional string query = 1;
     optional int32 page_number = 2;
@@ -13,6 +13,7 @@ message SearchRequest {
         VIDEO = 6;
     }
     optional Corpus corpus = 4;
+    optional SearchResponse s = 5;
 }
 
 message SearchResponse {

@@ -1,4 +1,4 @@
-package com.test;
+option java_package = "com.qingqing.proto.v1";
 
 message Open {
     optional string qingqing_test = 1;
