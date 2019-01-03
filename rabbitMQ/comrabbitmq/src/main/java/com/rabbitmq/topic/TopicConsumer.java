@@ -13,8 +13,8 @@ import java.util.Map;
 public class TopicConsumer extends TopicEndPoint implements Runnable,Consumer{
 
 
-    public TopicConsumer(String endpointName, String exchangeName) throws Exception {
-        super(endpointName, exchangeName);
+    public TopicConsumer(String QueueName, String exchangeName) throws Exception {
+        super(QueueName, exchangeName);
     }
 
 

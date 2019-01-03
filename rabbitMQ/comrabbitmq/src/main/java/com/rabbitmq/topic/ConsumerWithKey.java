@@ -10,11 +10,11 @@ import java.io.IOException;
 
 public class ConsumerWithKey  extends TopicEndPoint implements Runnable,Consumer {
     private String routingKey;
-    public ConsumerWithKey(String endpointName, String exchangeName) throws Exception {
-        this(endpointName, exchangeName, "");
+    public ConsumerWithKey(String QueueName, String exchangeName) throws Exception {
+        this(QueueName, exchangeName, "");
     }
-    public ConsumerWithKey(String endpointName, String exchangeName, String key) throws Exception {
-        super(endpointName, exchangeName);
+    public ConsumerWithKey(String QueueName, String exchangeName, String key) throws Exception {
+        super(QueueName, exchangeName);
         routingKey = key;
     }
 

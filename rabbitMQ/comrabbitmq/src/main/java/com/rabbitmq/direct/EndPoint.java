@@ -7,11 +7,11 @@ import com.rabbitmq.client.ConnectionFactory;
 public class EndPoint {
     protected Channel channel;
     protected Connection connection;
-    protected String endPointName;
+    protected String QueueName;
 
-    public EndPoint(String endpointName) throws Exception {
+    public EndPoint(String QueueName) throws Exception {
 
-        this.endPointName = endpointName;
+        this.QueueName = QueueName;
 
         //创建一个连接工厂 connection factory
         ConnectionFactory factory = new ConnectionFactory();
@@ -30,7 +30,7 @@ public class EndPoint {
         channel = connection.createChannel();
 
         //direct模式的exchange
-        channel.queueDeclare(endpointName, false, false, false, null);
+        channel.queueDeclare(QueueName, false, false, false, null);
     }
 
     /**

@@ -11,8 +11,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Consumer_f extends EndPoint_f implements Runnable, Consumer {
-    public Consumer_f(String endpointName, String exchangeName) throws Exception {
-        super(endpointName, exchangeName);
+    public Consumer_f(String QueueName, String exchangeName) throws Exception {
+        super(QueueName, exchangeName);
     }
 
     public void handleConsumeOk(String s) {
@@ -44,9 +44,9 @@ public class Consumer_f extends EndPoint_f implements Runnable, Consumer {
     public void run() {
         try {
             //把队列绑定到路由上
-            channel.queueDeclare(endPointName, false, false, false, null);
-            channel.queueBind(endPointName,"exchangeName","");
-            channel.basicConsume(endPointName, true, this);
+            channel.queueDeclare(QueueName, false, false, false, null);
+            channel.queueBind(QueueName,"exchangeName","");
+            channel.basicConsume(QueueName, true, this);
         } catch (IOException e) {
             e.printStackTrace();
         }

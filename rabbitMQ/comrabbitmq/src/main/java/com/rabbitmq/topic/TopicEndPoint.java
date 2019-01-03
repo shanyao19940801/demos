@@ -10,10 +10,10 @@ public class TopicEndPoint {
     protected String queueName;
     protected String exchangeName;
 
-    public TopicEndPoint(String endpointName, String exchangeName) throws Exception {
+    public TopicEndPoint(String QueueName, String exchangeName) throws Exception {
 
         this.exchangeName = exchangeName;
-        this.queueName = endpointName;
+        this.queueName = QueueName;
 
         //创建一个连接工厂 connection factory
         ConnectionFactory factory = new ConnectionFactory();
@@ -34,7 +34,7 @@ public class TopicEndPoint {
         channel.exchangeDeclare(exchangeName,"topic", false, true, null);
 
 
-//        channel.queueBind(endpointName,"exchangeName","routingKey");
+//        channel.queueBind(QueueName,"exchangeName","routingKey");
     }
 
     /**

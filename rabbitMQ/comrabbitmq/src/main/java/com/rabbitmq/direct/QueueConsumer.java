@@ -11,8 +11,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class QueueConsumer extends EndPoint implements Runnable, Consumer {
-    public QueueConsumer(String endpointName) throws Exception {
-        super(endpointName);
+    public QueueConsumer(String QueueName) throws Exception {
+        super(QueueName);
     }
 
     public void handleConsumeOk(String s) {
@@ -43,7 +43,7 @@ public class QueueConsumer extends EndPoint implements Runnable, Consumer {
 
     public void run() {
         try {
-            channel.basicConsume(endPointName, true, this);
+            channel.basicConsume(QueueName, true, this);
         } catch (IOException e) {
             e.printStackTrace();
         }

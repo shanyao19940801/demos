@@ -53,7 +53,7 @@ RabbitMQ消息队列-通过fanout模式将消息推送到多个Queue中
 
 **任何发送到Direct Exchange的消息都会被转发到RouteKey中指定的Queue。**
 
-1.一般情况可以使用rabbitMQ自带的Exchange：”"(该Exchange的名字为空字符串，下文称其为default Exchange)。
+1.一般情况可以使用rabbitMQ自带的Exchange：该Exchange的名字为空字符串，下文称其为default Exchange。
 
 2.这种模式下不需要将Exchange进行任何绑定(binding)操作
 
