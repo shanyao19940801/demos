@@ -17,12 +17,12 @@ public class TestTopicRabbitmq {
             //==============================消费者通过不同的通配符与queue绑定==============================================//
             //下面两个消费者是用不同的queue但是他们都受到消息，
             //由此可见：生产者消息是发送给所有的queue的
-            ConsumerWithKey consumer_1 = new ConsumerWithKey(queueName, exchangeName, "kernal.*");
+            /*ConsumerWithKey consumer_1 = new ConsumerWithKey(queueName, exchangeName, "kernal.*");
             Thread thread_1 = new Thread(consumer_1);
             thread_1.start();
             ConsumerWithKey consumer_2 = new ConsumerWithKey(queueName + "_to", exchangeName, "shanyao.*");
             Thread thread_2 = new Thread(consumer_2);
-            thread_2.start();
+            thread_2.start();*/
             //============================================================================//
             TopicProducer producer = new TopicProducer(exchangeName);
             for (String routing_Key : routing_keys){
