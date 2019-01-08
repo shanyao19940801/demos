@@ -14,13 +14,13 @@ public class    TestRabbitmq_f {
             //从下面两个消费者可以看出来，两个消费者可以从不同的queue中获取相同的信息
             //因为这两个queue都和exchange进行了绑定，而fanmout模式中生产者会将消息发送给exchange，而exchange
             //会将消息发送到所有与其绑定的queue中
-            Consumer_f consumer = new Consumer_f("queu3",exchangeName);
+            /*Consumer_f consumer = new Consumer_f("queu3",exchangeName);
             Thread consumerThread = new Thread(consumer);
             consumerThread.start();
 
             Consumer_f1 consumer_1 = new Consumer_f1("queue2", exchangeName);
             Thread thread1 = new Thread(consumer_1);
-            thread1.start();
+            thread1.start();*/
             //===================================================================//
             //=====================消费者：一个queue绑定多个exchang========================//
 //            Consumer_f consumer_2 = new Consumer_f("queue",exchangeName);
