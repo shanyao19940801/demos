@@ -28,7 +28,7 @@ public class Sender {
             String message = "NO. " + ++i;
             TimeUnit.MILLISECONDS.sleep(100);
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes("UTF-8"));
-            System.out.printf("(%1$s)[===>%2$s    ] %3$s\n", name, ":" + QUEUE_NAME, message);
+//            System.out.printf("(%1$s)[===>%2$s    ] %3$s\n", name, ":" + QUEUE_NAME, message);
         }
 
         channel.close();
